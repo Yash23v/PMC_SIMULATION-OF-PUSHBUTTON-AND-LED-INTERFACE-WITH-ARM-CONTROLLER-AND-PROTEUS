@@ -1,8 +1,8 @@
 # EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED INTERFACE WITH ARM CONTROLLER AND PROTEUS 
 ## Aim: To Interface a Digital output (LED) and Digital input (Pushbutton) to ARM development board , and simulate it in Proteus 
-## Name :
-## Roll no :
-## Date of Experiment :
+## Name : Yash Chhajer V
+## Roll no : 212225040498
+## Date of Experiment : 01-08-2026
 ## Components required: STM32 CUBE IDE, Proteus 8 simulator .
 ## Theory 
 The full form of an ARM is an advanced reduced instruction set computer (RISC) machine, and it is a 32-bit processor architecture expanded by ARM holdings. The applications of an ARM processor include several microcontrollers as well as processors. The architecture of an ARM processor was licensed by many corporations for designing ARM processor-based SoC products and CPUs. This allows the corporations to manufacture their products using ARM architecture. Likewise, all main semiconductor companies will make ARM-based SOCs such as Samsung, Atmel, TI etc.
@@ -74,22 +74,46 @@ We are now at the last part of step by step guide on how to simulate STM32 proje
 
 
 ## STM 32 CUBE PROGRAM :
+```
+#include "main.h"
+#include <stdbool.h>
 
+bool a;
 
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
 
+int main(void)
+{
+  HAL_Init();
+
+  SystemClock_Config();
+
+  MX_GPIO_Init();
+
+  while (1)
+  {
+    a = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
+    if (a == 0) {
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+      HAL_Delay(1000);
+    }
+    else {
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+      HAL_Delay(1000);
+    }
+  }
+}
+```
 
 ## Output screen shots of proteus  :
-
-
+<img width="1185" height="827" alt="PushButtonOff" src="https://github.com/user-attachments/assets/9ae3cf94-a14a-410f-a6ad-35532f7e8c52" />
+<img width="1182" height="831" alt="PushButtonOn" src="https://github.com/user-attachments/assets/dde1d076-a7b6-436f-ad6e-f0137ada2c01" />
 
 
 ## Proteus layout(Add pdf screen shot of circuit here)
- 
- 
- 
+[PushButton.pdf](https://github.com/user-attachments/files/30611603/PushButton.pdf)
+
  
 ## Result :
 Interfacing a digital output and digital input  with ARM microcontroller are simulated in proteus and the results are verified.
-
-
-
