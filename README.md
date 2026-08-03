@@ -112,8 +112,7 @@ int main(void)
 
 
 ## Proteus layout(Add pdf screen shot of circuit here)
-[PushButton.pdf](https://github.com/user-attachments/files/30611603/PushButton.pdf)
-
+<img width="1172" height="823" alt="Exp3" src="https://github.com/user-attachments/assets/5a2b80f3-aa1a-47ba-b1d2-cf11d87ff762" />
  
 ## Result :
 Interfacing a digital output and digital input  with ARM microcontroller are simulated in proteus and the results are verified.
